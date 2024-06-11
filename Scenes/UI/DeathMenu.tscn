@@ -1,0 +1,614 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://Assets/UI/Sometimes.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/UI/sButtonPressed.png" type="Texture" id=2]
+[ext_resource path="res://Assets/UI/sButton.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/UI/DeathMenu.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=31]
+size = 200
+outline_size = 12
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=33]
+default_font = SubResource( 31 )
+
+[sub_resource type="DynamicFont" id=32]
+size = 180
+outline_size = 20
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=34]
+default_font = SubResource( 32 )
+
+[sub_resource type="Animation" id=35]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.3, 0.3 ) ]
+}
+
+[sub_resource type="Animation" id=36]
+resource_name = "ResumeHover"
+length = 0.1
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"values": [  ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.3, 0.3 ), Vector2( 0.33, 0.33 ) ]
+}
+
+[sub_resource type="Animation" id=37]
+resource_name = "ResumeUnhover"
+length = 0.1
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"values": [  ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.33, 0.33 ), Vector2( 0.3, 0.3 ) ]
+}
+
+[sub_resource type="Animation" id=38]
+resource_name = "OptionsHover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.3, 0.3 ), Vector2( 0.33, 0.33 ) ]
+}
+
+[sub_resource type="Animation" id=39]
+resource_name = "OptionsUnhover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.33, 0.33 ), Vector2( 0.3, 0.3 ) ]
+}
+
+[sub_resource type="Animation" id=40]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.3, 0.3 ) ]
+}
+
+[sub_resource type="Animation" id=41]
+resource_name = "QuitHover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.3, 0.3 ), Vector2( 0.33, 0.33 ) ]
+}
+
+[sub_resource type="Animation" id=42]
+resource_name = "QuitUnhover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.33, 0.33 ), Vector2( 0.3, 0.3 ) ]
+}
+
+[sub_resource type="Animation" id=43]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.3, 0.3 ) ]
+}
+
+[sub_resource type="Animation" id=44]
+resource_name = "OnMenuOpen"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("RetryButton:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ), Vector2( 1e-05, 1e-05 ), Vector2( 0.3, 0.3 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MenuButton:rect_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ), Vector2( 1e-05, 1e-05 ), Vector2( 0.3, 0.3 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("QuitButton:rect_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ), Vector2( 1e-05, 1e-05 ), Vector2( 0.3, 0.3 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("GAME OVER:rect_scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ), Vector2( 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("GAME OVER:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.4, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 206, 237 ), Vector2( 206, 237 ), Vector2( 206, 61 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("ColorRect:color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0.352941 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Score:rect_scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ), Vector2( 1e-05, 1e-05 ), Vector2( 1, 1 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("HighScore:rect_scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ), Vector2( 1e-05, 1e-05 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=45]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("RetryButton:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.3, 0.3 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MenuButton:rect_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.3, 0.3 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("QuitButton:rect_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.3, 0.3 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("GAME OVER:rect_scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("GAME OVER:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 206, 237 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("ColorRect:color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0.352941 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Score:rect_scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("HighScore:rect_scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ) ]
+}
+
+[sub_resource type="DynamicFont" id=15]
+size = 60
+outline_size = 6
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=46]
+default_font = SubResource( 15 )
+
+[sub_resource type="Animation" id=47]
+resource_name = "HighScoreIdle"
+length = 1.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6, 1.2, 1.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 63, 297 ), Vector2( 63, 289 ), Vector2( 63, 305 ), Vector2( 63, 297 ) ]
+}
+
+[sub_resource type="Animation" id=48]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 63, 297 ) ]
+}
+
+[sub_resource type="Animation" id=49]
+resource_name = "LastScoreIdle"
+length = 1.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6, 1.2, 1.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 832, 293 ), Vector2( 832, 285 ), Vector2( 832, 301 ), Vector2( 832, 293 ) ]
+}
+
+[sub_resource type="Animation" id=50]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 832, 293 ) ]
+}
+
+[node name="DeathMenu" type="CanvasLayer"]
+layer = 100
+
+[node name="DeathMenu" type="Control" parent="."]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+
+[node name="ColorRect" type="ColorRect" parent="DeathMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.352941 )
+
+[node name="GAME OVER" type="Label" parent="DeathMenu"]
+margin_left = 206.0
+margin_top = 237.0
+margin_right = 946.0
+margin_bottom = 430.0
+rect_pivot_offset = Vector2( 370, 96.5 )
+theme = SubResource( 33 )
+text = "GAME OVER"
+align = 1
+valign = 1
+
+[node name="RetryButton" type="TextureButton" parent="DeathMenu"]
+margin_left = -157.0
+margin_top = 203.0
+margin_right = 1315.0
+margin_bottom = 503.0
+rect_scale = Vector2( 0.3, 0.3 )
+rect_pivot_offset = Vector2( 736, 150 )
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 2 )
+__meta__ = {
+"_editor_description_": "Retry"
+}
+
+[node name="Label" type="Label" parent="DeathMenu/RetryButton"]
+margin_left = 410.0
+margin_top = 36.6666
+margin_right = 1050.0
+margin_bottom = 277.667
+theme = SubResource( 34 )
+text = "R E T R Y"
+align = 1
+valign = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DeathMenu/RetryButton"]
+anims/RESET = SubResource( 35 )
+anims/ResumeHover = SubResource( 36 )
+anims/ResumeUnhover = SubResource( 37 )
+
+[node name="MenuButton" type="TextureButton" parent="DeathMenu"]
+margin_left = -157.0
+margin_top = 310.0
+margin_right = 1315.0
+margin_bottom = 610.0
+rect_scale = Vector2( 0.3, 0.3 )
+rect_pivot_offset = Vector2( 736, 150 )
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 2 )
+__meta__ = {
+"_editor_description_": "Menu"
+}
+
+[node name="Label" type="Label" parent="DeathMenu/MenuButton"]
+margin_left = 366.667
+margin_top = 36.6666
+margin_right = 1101.67
+margin_bottom = 277.667
+theme = SubResource( 34 )
+text = "M E N U"
+align = 1
+valign = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DeathMenu/MenuButton"]
+anims/OptionsHover = SubResource( 38 )
+anims/OptionsUnhover = SubResource( 39 )
+anims/RESET = SubResource( 40 )
+
+[node name="QuitButton" type="TextureButton" parent="DeathMenu"]
+margin_left = -157.0
+margin_top = 418.0
+margin_right = 1315.0
+margin_bottom = 718.0
+rect_scale = Vector2( 0.3, 0.3 )
+rect_pivot_offset = Vector2( 736, 150 )
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 2 )
+__meta__ = {
+"_editor_description_": "Quit"
+}
+
+[node name="Label" type="Label" parent="DeathMenu/QuitButton"]
+margin_left = 510.0
+margin_top = 36.6666
+margin_right = 960.0
+margin_bottom = 277.667
+theme = SubResource( 34 )
+text = "Q U I T"
+align = 1
+valign = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DeathMenu/QuitButton"]
+anims/QuitHover = SubResource( 41 )
+anims/QuitUnhover = SubResource( 42 )
+anims/RESET = SubResource( 43 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DeathMenu"]
+anims/OnMenuOpen = SubResource( 44 )
+anims/RESET = SubResource( 45 )
+
+[node name="Score" type="Label" parent="DeathMenu"]
+margin_left = 63.0
+margin_top = 297.0
+margin_right = 303.0
+margin_bottom = 416.0
+rect_scale = Vector2( 1e-05, 1e-05 )
+theme = SubResource( 46 )
+text = "SCORE :
+0"
+align = 1
+valign = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DeathMenu/Score"]
+anims/HighScoreIdle = SubResource( 47 )
+anims/RESET = SubResource( 48 )
+
+[node name="HighScore" type="Label" parent="DeathMenu"]
+margin_left = 832.0
+margin_top = 293.0
+margin_right = 1072.0
+margin_bottom = 412.0
+rect_scale = Vector2( 1e-05, 1e-05 )
+theme = SubResource( 46 )
+text = "HIGH SCORE :
+0"
+align = 1
+valign = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DeathMenu/HighScore"]
+anims/LastScoreIdle = SubResource( 49 )
+anims/RESET = SubResource( 50 )
+
+[connection signal="mouse_entered" from="DeathMenu/RetryButton" to="DeathMenu" method="_on_RetryButton_mouse_entered"]
+[connection signal="mouse_exited" from="DeathMenu/RetryButton" to="DeathMenu" method="_on_RetryButton_mouse_exited"]
+[connection signal="pressed" from="DeathMenu/RetryButton" to="DeathMenu" method="_on_RetryButton_pressed"]
+[connection signal="mouse_entered" from="DeathMenu/MenuButton" to="DeathMenu" method="_on_MenuButton_mouse_entered"]
+[connection signal="mouse_exited" from="DeathMenu/MenuButton" to="DeathMenu" method="_on_MenuButton_mouse_exited"]
+[connection signal="pressed" from="DeathMenu/MenuButton" to="DeathMenu" method="_on_MenuButton_pressed"]
+[connection signal="mouse_entered" from="DeathMenu/QuitButton" to="DeathMenu" method="_on_QuitButton_mouse_entered"]
+[connection signal="mouse_exited" from="DeathMenu/QuitButton" to="DeathMenu" method="_on_QuitButton_mouse_exited"]
+[connection signal="pressed" from="DeathMenu/QuitButton" to="DeathMenu" method="_on_QuitButton_pressed"]

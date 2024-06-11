@@ -1,0 +1,328 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Assets/UI/Sometimes.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/UI/sButtonPressed.png" type="Texture" id=2]
+[ext_resource path="res://Assets/UI/sButton.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/UI/PauseMenu.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=31]
+size = 200
+outline_size = 12
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=19]
+default_font = SubResource( 31 )
+
+[sub_resource type="DynamicFont" id=32]
+size = 180
+outline_size = 20
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=21]
+default_font = SubResource( 32 )
+
+[sub_resource type="Animation" id=24]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.3, 0.3 ) ]
+}
+
+[sub_resource type="Animation" id=22]
+resource_name = "ResumeHover"
+length = 0.1
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"values": [  ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.3, 0.3 ), Vector2( 0.33, 0.33 ) ]
+}
+
+[sub_resource type="Animation" id=23]
+resource_name = "ResumeUnhover"
+length = 0.1
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"values": [  ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.33, 0.33 ), Vector2( 0.3, 0.3 ) ]
+}
+
+[sub_resource type="Animation" id=25]
+resource_name = "OptionsHover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.3, 0.3 ), Vector2( 0.33, 0.33 ) ]
+}
+
+[sub_resource type="Animation" id=26]
+resource_name = "OptionsUnhover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.33, 0.33 ), Vector2( 0.3, 0.3 ) ]
+}
+
+[sub_resource type="Animation" id=27]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.3, 0.3 ) ]
+}
+
+[sub_resource type="Animation" id=28]
+resource_name = "QuitHover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.3, 0.3 ), Vector2( 0.33, 0.33 ) ]
+}
+
+[sub_resource type="Animation" id=29]
+resource_name = "QuitUnhover"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.33, 0.33 ), Vector2( 0.3, 0.3 ) ]
+}
+
+[sub_resource type="Animation" id=30]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.3, 0.3 ) ]
+}
+
+[node name="PauseMenu" type="CanvasLayer"]
+layer = 100
+
+[node name="PauseMenu" type="Control" parent="."]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+
+[node name="ColorRect" type="ColorRect" parent="PauseMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.352941 )
+
+[node name="PAUSED" type="Label" parent="PauseMenu"]
+margin_left = 238.0
+margin_top = 61.0
+margin_right = 929.0
+margin_bottom = 254.0
+rect_pivot_offset = Vector2( 345.5, 96.5 )
+theme = SubResource( 19 )
+text = "PAUSED"
+align = 1
+valign = 1
+
+[node name="ResumeButton" type="TextureButton" parent="PauseMenu"]
+margin_left = -157.0
+margin_top = 203.0
+margin_right = 1315.0
+margin_bottom = 503.0
+rect_scale = Vector2( 0.3, 0.3 )
+rect_pivot_offset = Vector2( 736, 150 )
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 2 )
+__meta__ = {
+"_editor_description_": "Play"
+}
+
+[node name="Label" type="Label" parent="PauseMenu/ResumeButton"]
+margin_left = 410.0
+margin_top = 36.6666
+margin_right = 1050.0
+margin_bottom = 277.667
+theme = SubResource( 21 )
+text = "R E S U M E"
+align = 1
+valign = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PauseMenu/ResumeButton"]
+anims/RESET = SubResource( 24 )
+anims/ResumeHover = SubResource( 22 )
+anims/ResumeUnhover = SubResource( 23 )
+
+[node name="OptionsButton" type="TextureButton" parent="PauseMenu"]
+margin_left = -157.0
+margin_top = 310.0
+margin_right = 1315.0
+margin_bottom = 610.0
+rect_scale = Vector2( 0.3, 0.3 )
+rect_pivot_offset = Vector2( 736, 150 )
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 2 )
+__meta__ = {
+"_editor_description_": "Options"
+}
+
+[node name="Label" type="Label" parent="PauseMenu/OptionsButton"]
+margin_left = 366.667
+margin_top = 36.6666
+margin_right = 1101.67
+margin_bottom = 277.667
+theme = SubResource( 21 )
+text = "O P T I O N S"
+align = 1
+valign = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PauseMenu/OptionsButton"]
+anims/OptionsHover = SubResource( 25 )
+anims/OptionsUnhover = SubResource( 26 )
+anims/RESET = SubResource( 27 )
+
+[node name="QuitButton" type="TextureButton" parent="PauseMenu"]
+margin_left = -157.0
+margin_top = 418.0
+margin_right = 1315.0
+margin_bottom = 718.0
+rect_scale = Vector2( 0.3, 0.3 )
+rect_pivot_offset = Vector2( 736, 150 )
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 2 )
+__meta__ = {
+"_editor_description_": "Quit"
+}
+
+[node name="Label" type="Label" parent="PauseMenu/QuitButton"]
+margin_left = 510.0
+margin_top = 36.6666
+margin_right = 960.0
+margin_bottom = 277.667
+theme = SubResource( 21 )
+text = "Q U I T"
+align = 1
+valign = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PauseMenu/QuitButton"]
+anims/QuitHover = SubResource( 28 )
+anims/QuitUnhover = SubResource( 29 )
+anims/RESET = SubResource( 30 )
+
+[node name="Count" type="Control" parent="."]
+pause_mode = 2
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="Count"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.352941 )
+
+[node name="Counter" type="Label" parent="Count"]
+margin_left = 238.0
+margin_top = 229.0
+margin_right = 929.0
+margin_bottom = 422.0
+rect_pivot_offset = Vector2( 345.5, 96.5 )
+theme = SubResource( 19 )
+text = "3"
+align = 1
+valign = 1
+
+[connection signal="mouse_entered" from="PauseMenu/ResumeButton" to="PauseMenu" method="_on_Resume_mouse_entered"]
+[connection signal="mouse_exited" from="PauseMenu/ResumeButton" to="PauseMenu" method="_on_Resume_mouse_exited"]
+[connection signal="pressed" from="PauseMenu/ResumeButton" to="PauseMenu" method="_on_ResumeButton_pressed"]
+[connection signal="mouse_entered" from="PauseMenu/OptionsButton" to="PauseMenu" method="_on_OptionsButton_mouse_entered"]
+[connection signal="mouse_exited" from="PauseMenu/OptionsButton" to="PauseMenu" method="_on_OptionsButton_mouse_exited"]
+[connection signal="pressed" from="PauseMenu/OptionsButton" to="PauseMenu" method="_on_OptionsButton_pressed"]
+[connection signal="mouse_entered" from="PauseMenu/QuitButton" to="PauseMenu" method="_on_QuitButton_mouse_entered"]
+[connection signal="mouse_exited" from="PauseMenu/QuitButton" to="PauseMenu" method="_on_QuitButton_mouse_exited"]
+[connection signal="pressed" from="PauseMenu/QuitButton" to="PauseMenu" method="_on_QuitButton_pressed"]

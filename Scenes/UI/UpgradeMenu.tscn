@@ -1,0 +1,94 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Assets/UI/Sometimes.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://Scripts/UI/UpgradeMenu.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Collectibles/sDash.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Collectibles/sBoots.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Collectibles/sSword.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Collectibles/sHearts.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 250
+outline_size = 20
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 500, 500 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ SubResource( 3 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+} ]
+
+[node name="UpgradeMenu" type="Node2D"]
+scale = Vector2( 0.25, 0.25 )
+script = ExtResource( 3 )
+
+[node name="AttackCount" type="Label" parent="."]
+margin_left = -1108.0
+margin_top = -224.0
+margin_right = -893.0
+margin_bottom = 257.0
+theme = SubResource( 2 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="HealthCount" type="Label" parent="."]
+margin_left = -512.0
+margin_top = -224.0
+margin_right = -297.0
+margin_bottom = 257.0
+theme = SubResource( 2 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="SpeedCount" type="Label" parent="."]
+margin_left = 108.0
+margin_top = -224.0
+margin_right = 323.0
+margin_bottom = 257.0
+theme = SubResource( 2 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="UpgradesCount" type="Label" parent="."]
+margin_left = 636.0
+margin_top = -224.0
+margin_right = 851.0
+margin_bottom = 257.0
+theme = SubResource( 2 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="SSword" type="Sprite" parent="."]
+position = Vector2( -728, -16 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 6 )
+
+[node name="SHealth" type="AnimatedSprite" parent="."]
+position = Vector2( -100, 0 )
+frames = SubResource( 4 )
+animation = "Idle"
+
+[node name="SBoots" type="Sprite" parent="."]
+position = Vector2( 468, -8 )
+texture = ExtResource( 5 )
+
+[node name="SUpgrades" type="Sprite" parent="."]
+position = Vector2( 1028, -4 )
+rotation = -1.56863
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 4 )

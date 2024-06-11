@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/UI/sPlayerBarEmpty.png" type="Texture" id=1]
+[ext_resource path="res://Assets/UI/sPlayerBarFill.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Collectibles/sSword.png" type="Texture" id=3]
+[ext_resource path="res://Assets/UI/sPlayerBarStroke.png" type="Texture" id=4]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 1466, 250 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 1466, 250 )
+
+[node name="SwordTimer" type="Node2D"]
+scale = Vector2( 0.5, 0.5 )
+z_index = 101
+
+[node name="SwordTimeBar" type="ProgressBar" parent="."]
+margin_left = 43.0
+margin_top = 46.0
+margin_right = 136.0
+margin_bottom = 86.0
+rect_rotation = -90.2797
+custom_styles/fg = SubResource( 1 )
+custom_styles/bg = SubResource( 2 )
+max_value = 10.0
+percent_visible = false
+
+[node name="TimerBarBorder" type="Sprite" parent="."]
+position = Vector2( 42.803, 44.699 )
+rotation = -1.57568
+scale = Vector2( 0.0620465, 0.157944 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Sword" type="Sprite" parent="."]
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 3 )
+
+[node name="TimerBarBorder2" type="Sprite" parent="."]
+position = Vector2( 42.803, 46.699 )
+rotation = -1.57568
+scale = Vector2( 0.0620465, 0.157944 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="TimerBarBorder3" type="Sprite" parent="."]
+position = Vector2( 42.803, 42.699 )
+rotation = -1.57568
+scale = Vector2( 0.0620465, 0.157944 )
+texture = ExtResource( 4 )
+centered = false
